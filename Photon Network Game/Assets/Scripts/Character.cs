@@ -8,7 +8,7 @@ public class Character : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        
+        DisableCamera();
     }
 
     // Update is called once per frame
@@ -22,13 +22,11 @@ public class Character : MonoBehaviourPun
         //현재 플레이어가 나 자신이라면
         if (photonView.IsMine)
         {
-            Camera.main.enabled = false;
-            
-
+            Camera.main.gameObject.SetActive(false);
         }
         else
         {
-
+            remoteCamera.gameObject.SetActive(false);
         }
     }
 }
