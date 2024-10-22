@@ -1,22 +1,32 @@
 using UnityEngine;
 using Photon.Pun;
 
+//자동으로 필요한 컴포넌트를 붙여줌
+[RequireComponent(typeof(Move))]
+
 public class Character : MonoBehaviourPun
 {
     [SerializeField] Camera remoteCamera;
-
-    // Start is called before the first frame update
+    [SerializeField] Rigidbody rigidBody;
+    [SerializeField] Move move;
+    private void Awake()
+    {
+        rigidBody = GetComponent<Rigidbody>();
+        move = GetComponent<Move>();
+    }
     void Start()
     {
         DisableCamera();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        move.OnKeyUpdate();
     }
-
+    private void FixedUpdate()
+    {
+        move.OnMove(rigidBody);
+    }
     public void DisableCamera()
     {
         //현재 플레이어가 나 자신이라면

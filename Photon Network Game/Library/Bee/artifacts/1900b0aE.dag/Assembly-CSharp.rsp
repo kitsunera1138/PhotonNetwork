@@ -385,10 +385,13 @@
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
 "Assets/Scripts/Character.cs"
 "Assets/Scripts/CharacterSpawnerManager.cs"
+"Assets/Scripts/Head.cs"
 "Assets/Scripts/Information.cs"
 "Assets/Scripts/LobbyManager.cs"
+"Assets/Scripts/Move.cs"
 "Assets/Scripts/PlayfabManager.cs"
 "Assets/Scripts/RoomManager.cs"
+"Assets/Scripts/Rotation.cs"
 -langversion:9.0
 
 /deterministic
