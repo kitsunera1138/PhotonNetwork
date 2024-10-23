@@ -388,6 +388,7 @@
 "Assets/Scripts/Head.cs"
 "Assets/Scripts/Information.cs"
 "Assets/Scripts/LobbyManager.cs"
+"Assets/Scripts/MouseManager.cs"
 "Assets/Scripts/Move.cs"
 "Assets/Scripts/PlayfabManager.cs"
 "Assets/Scripts/RoomManager.cs"

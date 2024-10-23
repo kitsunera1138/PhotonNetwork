@@ -98,7 +98,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248033006330231350}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 25e0011c156862344a36e23636af89b2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   remoteCamera: {fileID: 2638739818252596873}
   rigidBody: {fileID: 0}
   move: {fileID: 0}
+  rotation: {fileID: 0}
 --- !u!114 &2967911019329226538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,9 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc110d000acf734ba7885b3ab1f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 300
   mouseX: 0
   mouseY: 0
-  speed: 0
 --- !u!1 &3387759977052418369
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,9 +345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc110d000acf734ba7885b3ab1f9a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 300
   mouseX: 0
   mouseY: 0
-  speed: 300
 --- !u!1001 &5217914577796358687
 PrefabInstance:
   m_ObjectHideFlags: 0
