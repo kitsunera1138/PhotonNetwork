@@ -11,7 +11,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [SerializeField] InputField roomCapacityInputField;
 
     //동적으로 할당해서 사용할 예정
-    private Dictionary<string, RoomInfo> dictonary = new Dictionary<string, RoomInfo>();
+    private Dictionary<string, GameObject> dictonary = new Dictionary<string, GameObject>();
+
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("Game Scene");
@@ -31,7 +32,46 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        InstantiateRoom();
+        GameObject roomPrefab;
+        foreach (RoomInfo room in roomList)
+        {
+            //룸이 삭제된 경우
+            if (room.RemovedFromList == true)
+            {
+                dictonary.TryGetValue(room.Name, out roomPrefab);
+                //빈방을 날림
+                Destroy(roomPrefab);
+                dictonary.Remove(room.Name);
+            }
+            else //룸의 정보가 변경된 경우 
+            {
+                //룸이 처음 생성된 경우
+                if (dictonary.ContainsKey(room.Name) == false) //찾는 것이 없다면
+                {
+                    GameObject roomObject = InstantiateRoom();
+
+                    roomObject.GetComponent<Information>().SetData(
+                        room.Name,
+                        room.PlayerCount,
+                        room.MaxPlayers
+                        );
+
+                    dictonary.Add(room.Name, roomObject);
+                }
+                else //룸의 정보가 변경된 경우
+                {
+                    dictonary.TryGetValue(room.Name, out roomPrefab);
+
+                    roomPrefab.GetComponent<Information>().SetData
+                    (
+                        room.Name,
+                        room.PlayerCount,
+                        room.MaxPlayers
+                    );
+
+                }
+            }
+        }
     }
 
     public GameObject InstantiateRoom()

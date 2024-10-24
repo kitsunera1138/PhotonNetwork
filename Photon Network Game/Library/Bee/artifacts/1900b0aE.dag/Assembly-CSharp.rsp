@@ -393,6 +393,7 @@
 "Assets/Scripts/PlayfabManager.cs"
 "Assets/Scripts/RoomManager.cs"
 "Assets/Scripts/Rotation.cs"
+"Assets/Scripts/UnitManager.cs"
 -langversion:9.0
 
 /deterministic
