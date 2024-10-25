@@ -9,7 +9,7 @@ public class MouseManager : MonoBehaviour
     [SerializeField] Texture2D texture2D;
 
     private static MouseManager instance;
-    private static MouseManager Instance { get { return instance; } }
+    public static MouseManager Instance { get { return instance; } }
 
     private void OnEnable() //씬 이동에 따른 처리에 대한 이벤트 등록
     {
