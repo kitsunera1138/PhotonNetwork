@@ -11,6 +11,7 @@ public class Character : MonoBehaviourPun
     [SerializeField] Rigidbody rigidBody;
     [SerializeField] Move move;
     [SerializeField] Rotation rotation;
+    [SerializeField] GameObject PausegameObject;
 
     private void Awake()
     {
@@ -23,13 +24,24 @@ public class Character : MonoBehaviourPun
         DisableCamera();
     }
 
+
     void Update()
     {
         if (photonView.IsMine == false) return;
 
+        //임시
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             MouseManager.Instance.SetMouse(true);
+
+            //임시
+            PausegameObject = GameObject.Find("Canvas").transform.Find("Pause Panel").gameObject;
+            PausegameObject.SetActive(true);
         }
 
         move.OnKeyUpdate();
@@ -54,4 +66,5 @@ public class Character : MonoBehaviourPun
             remoteCamera.gameObject.SetActive(false);
         }
     }
+    
 }

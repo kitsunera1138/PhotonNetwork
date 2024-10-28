@@ -20,6 +20,13 @@ public class Head : MonoBehaviourPunCallbacks //photonView 사용
     {
         if (photonView.IsMine == false) return;
 
+        //임시
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+            return;
+        }
+
+
         rotation.RotateX();
     }
 }
