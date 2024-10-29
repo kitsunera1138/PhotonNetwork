@@ -199,6 +199,7 @@ MonoBehaviour:
   rigidBody: {fileID: 0}
   move: {fileID: 0}
   rotation: {fileID: 0}
+  PausegameObject: {fileID: 0}
 --- !u!114 &2967911019329226538
 MonoBehaviour:
   m_ObjectHideFlags: 0
