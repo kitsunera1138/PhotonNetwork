@@ -1047,6 +1047,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 2638739818252596873}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &5217914577796546857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 467766, guid: e3f6749e3b34b374ba0ae9092315c715, type: 3}

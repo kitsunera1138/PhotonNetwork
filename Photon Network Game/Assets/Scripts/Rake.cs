@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using Photon.Pun;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,7 +9,8 @@ using UnityEngine.AI;
 enum State{
     WALK,
     ATTACK,
-    DIE
+    DIE,
+    NONE
 }
 
 public class Rake : MonoBehaviour
@@ -38,7 +41,6 @@ public class Rake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         switch (state)
         {
             case State.WALK:
@@ -50,7 +52,8 @@ public class Rake : MonoBehaviour
             case State.DIE:
                 Die();
                 break;
-
+            case State.NONE://예외처리
+                break;
             default:
                 break;
         }
@@ -65,9 +68,21 @@ public class Rake : MonoBehaviour
     {
         animator.Play("Attack");
     }
-
+    
     public void Die()
     {
-        animator.SetTrigger("Die");
+        if(state != State.NONE)
+        {
+            state = State.DIE;
+            //navMeshAgent.speed = 0; //죽었을 경우 움직임 X 하도록  or //navMeshAgent.isStopped = true;
+            navMeshAgent.isStopped = true;
+            animator.SetTrigger("Die");
+            state = State.NONE;
+        }
+    }
+
+    public void Release()
+    {
+        PhotonNetwork.Destroy(gameObject);
     }
 }
