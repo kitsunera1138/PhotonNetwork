@@ -395,6 +395,7 @@
 "Assets/Scripts/Character/Rotation.cs"
 "Assets/Scripts/Information.cs"
 "Assets/Scripts/Managers/DialogManager.cs"
+"Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/LobbyManager.cs"
 "Assets/Scripts/Managers/RoomManager.cs"
 "Assets/Scripts/Managers/UnitManager.cs"

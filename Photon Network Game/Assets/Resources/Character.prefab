@@ -238,12 +238,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248033006330231350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 194750360d5ad8c4fb22ba7c47976e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nickNametext: {fileID: 8860861021225977462}
+  remoteCamera: {fileID: 0}
 --- !u!1 &547642822524653980
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +793,7 @@ GameObject:
   - component: {fileID: 7315335738757406703}
   - component: {fileID: 456071384636567282}
   - component: {fileID: 5073860570919461835}
+  - component: {fileID: 7094091019101147524}
   m_Layer: 5
   m_Name: World Canvas
   m_TagString: Untagged
@@ -882,6 +884,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7094091019101147524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454036561355361132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194750360d5ad8c4fb22ba7c47976e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nickNametext: {fileID: 8860861021225977462}
+  remoteCamera: {fileID: 2638739818252596873}
 --- !u!1 &6697979843611083446
 GameObject:
   m_ObjectHideFlags: 0

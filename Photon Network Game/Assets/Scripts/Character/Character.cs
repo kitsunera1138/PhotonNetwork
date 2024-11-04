@@ -1,11 +1,12 @@
 using UnityEngine;
 using Photon.Pun;
+using ExitGames.Client.Photon;
 
 //자동으로 필요한 컴포넌트를 붙여줌
 [RequireComponent(typeof(Move))]
 [RequireComponent(typeof(Rotation))]
 
-public class Character : MonoBehaviourPun
+public class Character : MonoBehaviourPunCallbacks
 {
     [SerializeField] Camera remoteCamera;
     [SerializeField] Rigidbody rigidBody;
@@ -13,8 +14,11 @@ public class Character : MonoBehaviourPun
     [SerializeField] Rotation rotation;
     [SerializeField] GameObject PausegameObject;
 
+    //private EventData eventData;
+
     private void Awake()
     {
+        //eventData = new EventData(); //MonoBehaviour 상속이 안되기에 new로 할당(생성)
         rigidBody = GetComponent<Rigidbody>();
         move = GetComponent<Move>();
         rotation = GetComponent<Rotation>();
@@ -27,6 +31,7 @@ public class Character : MonoBehaviourPun
 
     void Update()
     {
+        //if (eventData.Code != 1) { return; }
         if (photonView.IsMine == false) return;
 
         //임시
@@ -66,5 +71,17 @@ public class Character : MonoBehaviourPun
             remoteCamera.gameObject.SetActive(false);
         }
     }
+
+    //public void OnEvent(EventData photonEvent)
+    //{
+    //    switch (photonEvent.Code)
+    //    {
+    //        case 0:
+    //            break;
+
+
+            
+    //    }
+    //}
     
 }

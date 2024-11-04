@@ -21,16 +21,16 @@ public class Rifle : MonoBehaviourPunCallbacks
             {
                 //Debug.DrawRay(ray.origin, ray.direction, Color.red, 0.05f);
                 //Debug.Log(rayCastHit.collider.gameObject.name);
-                PhotonView photonview = rayCastHit.collider.GetComponent<PhotonView>();
+                PhotonView photonView = rayCastHit.collider.GetComponent<PhotonView>();
 
-                if (photonview.IsMine)
+                if (photonView.IsMine)
                 {
-                    Debug.Log("Shot");
-                    GameObject obj = photonview.gameObject;
-                    obj.GetComponent<Rake>().Die();
+                    //Debug.Log("Shot");
+                    //GameObject obj = photonview.gameObject;
+                    //obj.GetComponent<Rake>().Die();
                     //Rake rake = photonView.gameObject.GetComponent<Rake>();
                     //rake.Release();
-                    //photonView.gameObject.GetComponent<Rake>().Die();
+                    photonView.GetComponent<Rake>().Die();
                 }
 
                 /*
