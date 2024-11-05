@@ -29,7 +29,8 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
     }
     public void Failure(PlayFabError playFabError)
     {
-        Debug.Log(playFabError.GenerateErrorReport());
+        PopUpManager.Instance.Show(PopupType.SIGNUPFAILURE,playFabError.GenerateErrorReport());
+        //Debug.Log(playFabError.GenerateErrorReport());
     }
 
     //로그인 함수
