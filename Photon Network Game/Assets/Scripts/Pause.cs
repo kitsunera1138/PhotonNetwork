@@ -4,12 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class Pause : MonoBehaviourPunCallbacks
+public class Pause : PopUp
 {
-    public void Resume() {
+    public override void OnConfirm()
+    {
         MouseManager.Instance.SetMouse(false);
         gameObject.SetActive(false);
     }
+
+    // PopUp 클래스 상속 받아서 사용
+    //public void Resume() {
+    //    MouseManager.Instance.SetMouse(false);
+    //    gameObject.SetActive(false);
+    //}
 
     public void Exit() {
         PhotonNetwork.LeaveRoom();

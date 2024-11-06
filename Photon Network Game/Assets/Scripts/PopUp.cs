@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopUp : MonoBehaviour
+public abstract class PopUp : MonoBehaviourPunCallbacks
 {
-    [SerializeField] Text text;
+    public abstract void OnConfirm();
+    //[SerializeField] Text text;
 
-    public void SetData(string message)
-    {
-        text.text = message;
-    }
+    //public void SetData(string message)
+    //{
+    //    text.text = message;
+    //}
 
-    public void OnClose() //ÆË¾÷ ´Ý±â
-    {
-        gameObject.SetActive(false);
-    }
+    //public void OnClose() //ÆË¾÷ ´Ý±â
+    //{
+    //    gameObject.SetActive(false);
+    //}
 
     
 }

@@ -12,7 +12,7 @@ public class Character : MonoBehaviourPunCallbacks
     [SerializeField] Rigidbody rigidBody;
     [SerializeField] Move move;
     [SerializeField] Rotation rotation;
-    [SerializeField] GameObject PausegameObject;
+    //[SerializeField] GameObject PausegameObject;
 
     //private EventData eventData;
 
@@ -43,10 +43,10 @@ public class Character : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             MouseManager.Instance.SetMouse(true);
-
+            PopUpManager.Instance.Show(PopupType.PAUSE, "OnPAUSE");//Escape임시
             //임시
-            PausegameObject = GameObject.Find("Canvas").transform.Find("Pause Panel").gameObject;
-            PausegameObject.SetActive(true);
+            //PausegameObject = GameObject.Find("Canvas").transform.Find("Pause Panel").gameObject;
+            //PausegameObject.SetActive(true);
         }
 
         move.OnKeyUpdate();

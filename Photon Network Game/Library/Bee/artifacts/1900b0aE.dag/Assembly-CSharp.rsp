@@ -387,6 +387,7 @@
 "Assets/Photon/PhotonChat/Demos/DemoChat/IgnoreUiRaycastWhenInactive.cs"
 "Assets/Photon/PhotonChat/Demos/DemoChat/NamePickGui.cs"
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
+"Assets/Scripts/Alarm.cs"
 "Assets/Scripts/Character/Character.cs"
 "Assets/Scripts/Character/CharacterSpawnerManager.cs"
 "Assets/Scripts/Character/Head.cs"
@@ -397,16 +398,17 @@
 "Assets/Scripts/Managers/DialogManager.cs"
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/LobbyManager.cs"
+"Assets/Scripts/Managers/PlayfabManager.cs"
 "Assets/Scripts/Managers/PopUpManager.cs"
 "Assets/Scripts/Managers/RoomManager.cs"
 "Assets/Scripts/Managers/UnitManager.cs"
 "Assets/Scripts/MouseManager.cs"
 "Assets/Scripts/NickNameManager.cs"
 "Assets/Scripts/Pause.cs"
-"Assets/Scripts/PlayfabManager.cs"
 "Assets/Scripts/PopUp.cs"
 "Assets/Scripts/Rake.cs"
 "Assets/Scripts/Rifle.cs"
+"Assets/Scripts/SignUp.cs"
 -langversion:9.0
 
 /deterministic
