@@ -370,9 +370,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PopUp, Assembly-CSharp
-        m_MethodName: OnClose
+      - m_Target: {fileID: 4102245746594578054}
+        m_TargetAssemblyTypeName: Alarm, Assembly-CSharp
+        m_MethodName: OnConfirm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

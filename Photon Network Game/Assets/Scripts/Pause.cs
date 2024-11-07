@@ -20,6 +20,8 @@ public class Pause : PopUp
 
     public void Exit() {
         PhotonNetwork.LeaveRoom();
+        gameObject.SetActive(false);
+
     }
 
     public override void OnLeftRoom()

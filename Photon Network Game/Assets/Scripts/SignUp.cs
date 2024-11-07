@@ -28,6 +28,16 @@ public class SignUp : PopUp //SignUpPopUp
             Failure
             );
 
+        //1. PhotonNetwork.NickName에 inputField로 입력한 값을 넣어줍니다.
+        PhotonNetwork.NickName = NickNameInputField.text;
+        //2. NickName을 저장합니다.
+        PlayerPrefs.SetString("NickName", PhotonNetwork.NickName);
+        //3. 게임 오브젝트를 비활성화 합니다.
+
+        emailInputField.text = "";
+        passwordInputField.text = "";
+        NickNameInputField.text = "";
+
         gameObject.SetActive(false);
     }
 

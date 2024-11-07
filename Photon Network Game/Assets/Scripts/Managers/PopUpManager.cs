@@ -24,6 +24,9 @@ public class PopUpManager : MonoBehaviour
 
     private void Awake()
     {
+        //if (parentTransform == null || parentTransform.gameObject == null || !parentTransform.gameObject.activeInHierarchy)
+        //    parentTransform = gameObject.transform;
+
         if (instance == null)
         {
             instance = this;
